@@ -147,3 +147,10 @@
 
 /* Detail / fallback states */
 .journalStory{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(35px,7vw,100px);align-items:start}.postArt.large{min-height:520px;display:grid;place-items:end start;padding:25px;font-size:10px}.journalStoryCopy{max-width:650px;padding-top:25px}.journalStoryCopy p{font-size:18px;color:var(--muted);margin:0 0 25px}.notFound{display:flex;gap:20px;align-items:center;min-height:260px}@media(max-width:900px){.journalStory{grid-template-columns:1fr}.postArt.large{min-height:360px}.journalStoryCopy{padding-top:0}}@media(max-width:520px){.notFound{flex-direction:column;align-items:flex-start}}
+
+/* Theme switcher reliability */
+.themeTrigger,.mobileTheme,.themeOption,.themePanelHead button{cursor:pointer;pointer-events:auto}
+.themePanel{z-index:1000;pointer-events:auto}
+.themePanel *{pointer-events:auto}
+.themeOption{position:relative;z-index:1}
+@media(max-width:900px){.themePanel{top:82px;right:12px;width:min(430px,calc(100vw - 24px));max-height:calc(100vh - 100px);overflow:auto}.mobileNav{z-index:900}.themePanel{z-index:1001}}
