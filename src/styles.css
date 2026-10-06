@@ -192,3 +192,38 @@ body{font-size:13px;line-height:1.55}
  .pageHero h1{font-size:clamp(46px,13vw,72px)}
  .hero{min-height:calc(100vh - 64px)}
 }
+
+/* Theme chooser — startup overlay + footer sub-navigation */
+.themePanel.themeWelcome{
+  position:fixed;inset:0;right:auto;top:auto;width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  padding:24px;background:rgba(10,14,12,.42);backdrop-filter:blur(12px);
+  z-index:200;animation:themeOverlayIn .35s ease-out;
+}
+.themePanel.themeWelcome::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.08)}
+.themeWelcome .themePanelHead,.themeWelcome .themeOptions{position:relative;z-index:1;width:min(620px,100%)}
+.themeWelcome .themePanelHead{
+  background:var(--paper);border:1px solid var(--line);border-bottom:0;
+  padding:25px 25px 16px;margin:0 auto;
+}
+.themeWelcome .themePanelHead strong{font-size:30px}
+.themeWelcomeCopy{max-width:430px;margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
+.themeWelcome .themePanelHead button{cursor:pointer}
+.themeWelcome .themeOptions{
+  background:var(--paper);border:1px solid var(--line);border-top:0;padding:0 25px 25px;
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+}
+.themeWelcome .themeOption{background:transparent}
+.footerTheme{
+  display:inline-flex;align-items:center;gap:6px;margin-top:13px;padding:7px 0;
+  border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);
+  font-size:9px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
+}
+.footerTheme:hover{opacity:.55}
+@keyframes themeOverlayIn{from{opacity:0}to{opacity:1}}
+@media(max-width:700px){
+ .themeWelcome .themePanelHead{padding:20px 18px 13px}
+ .themeWelcome .themePanelHead strong{font-size:24px}
+ .themeWelcome .themeOptions{grid-template-columns:1fr;padding:0 18px 18px}
+ .themeWelcome .themeOption{padding:10px}
+}
